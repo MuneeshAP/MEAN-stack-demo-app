@@ -1,0 +1,70 @@
+<app-header></app-header>
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+          *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card">
+        <h3>Add Card Details</h3>
+      <form [formGroup]="addcardForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Bank Name</mat-label>
+            <input matInput placeholder="Bank Name" formControlName="bankName"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!addcardForm.get('bankName')!.valid && addcardForm.get('bankName')!.touched">Please enter Bank name</span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>Card Number</mat-label>
+            <input matInput placeholder="Card Number" formControlName="cardNumber"
+                    [errorStateMatcher]="matcher" type="number">
+            <mat-error>
+              <span *ngIf="!addcardForm.get('cardNumber')!.valid && addcardForm.get('cardNumber')!.touched">Please enter Card Number</span>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="example-full-width">
+            <mat-label>CVV</mat-label>
+            <input matInput placeholder="CVV" formControlName="cvv"
+                    [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!addcardForm.get('cvv')!.valid && addcardForm.get('cvv')!.touched">Please enter Email</span>
+            </mat-error>
+          </mat-form-field>
+        <div>
+            <mat-form-field class="example">
+                <mat-label>Expire Month</mat-label>
+                <mat-select formControlName="expMonth">
+                    <mat-option *ngFor="let ml of monthList" [value]="ml">
+                      {{ml}}
+                    </mat-option>
+                  </mat-select>
+                <mat-error>
+                  <span *ngIf="!addcardForm.get('expMonth')!.valid && addcardForm.get('expMonth')!.touched">Please enter Expire Month</span>
+                </mat-error>
+              </mat-form-field>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <mat-form-field class="example2">
+          <mat-label>Expire Year</mat-label>
+          <mat-select formControlName="expYear">
+            <mat-option *ngFor="let yl of yaerList" [value]="yl">
+              {{yl}}
+            </mat-option>
+          </mat-select>
+          <mat-error>
+            <span *ngIf="!addcardForm.get('expYear')?.valid && addcardForm.get('expYear')?.touched">Please enter Password</span>
+          </mat-error>
+        </mat-form-field>
+    </div>
+        <div class="button-row">
+          <button type="submit" [disabled]="!addcardForm.valid" mat-flat-button color="primary">
+            <mat-icon>save</mat-icon>
+        </button>
+        <div *ngIf="isLoadingResults === false &&  (errors !== null || errors !== '' )" class="forerror">
+          <span >{{errors}}</span>
+       </div>
+        </div>
+      </form>
+    </mat-card>
+  </div>

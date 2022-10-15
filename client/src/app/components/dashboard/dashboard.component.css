@@ -1,0 +1,108 @@
+.tabcont{
+  max-width: 80%;
+  margin: 25px auto;
+  padding: 35px 10px;
+  box-shadow: 0 20px 15px -10px #0e50c2;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height:70vh;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+  
+  .example-table-container {
+    max-height: 400px;
+    text-align: center;
+  }
+
+  .mat-row:hover {
+    cursor: pointer;
+    border-style: solid;
+    border-color: rgb(133, 226, 181);
+    }
+
+
+  .mat-row td{
+    border-radius: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5em;
+  }
+  
+  .example-loading-shade {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 56px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-rate-limit-reached {
+    color: #980000;
+    max-width: 360px;
+    text-align: center;
+  }
+  
+
+  .mat-column-number,
+  .mat-column-state {
+    max-width: 64px;
+  }
+  
+  .mat-column-created {
+    max-width: 124px;
+  }
+  
+  .mat-flat-button {
+    margin: 10px;
+    width: 100%;
+    max-width: 30%;
+    font-size: medium;
+    background-color: antiquewhite;
+  }
+  .mat-flat-button:hover{
+    background-color:rgb(240, 191, 125);
+    color: white;
+  }
+
+  .mat-header-cell{
+    text-align: center;
+    font-size:medium;
+    font-weight: bold;
+    font-family:cursive;
+  }
+
+  th{
+    background-color: #ced4f1;  
+    overflow-y:scroll;
+  overflow-x:hidden;  
+  }
+
+  @media screen and (max-width: 800px) {
+    .mat-flat-button {
+      margin: 10px;
+      width: 100%;
+      max-width: 50%;
+      font-size: small;
+      background-color: antiquewhite;
+    }
+    .mat-header-cell{
+      text-align: center;
+      font-size:small;
+      font-family:cursive;
+    }
+    .mat-cell{
+      font-size: 12px;
+    }
+  }
+  

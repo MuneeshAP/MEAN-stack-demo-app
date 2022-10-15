@@ -1,0 +1,36 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "new sample project",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "main": "./bin/www",
+  "author": "muneeshap",
+  "license": "ISC",
+  "dependencies": {
+    "await-to-js": "^3.0.0",
+    "bcrypt": "^5.0.1",
+    "bcrypt-promise": "^2.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "http-status": "^1.5.3",
+    "jade": "^1.11.0",
+    "mongoose": "^6.6.2",
+    "mongoose-validator": "^2.1.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "parse-error": "^0.2.0",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.0",
+    "serve-favicon": "^2.5.0",
+    "validator": "^13.7.0"
+  }
+}

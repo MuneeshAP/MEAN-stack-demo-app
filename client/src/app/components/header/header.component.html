@@ -1,0 +1,30 @@
+<div class="container">
+    <mat-toolbar>
+      <div >
+       <a [routerLink]="showMenu? '/home' : '/'">
+        <mat-icon class="iconsheader">person</mat-icon>&nbsp;
+        <span>{{ userToken === null ? "Welcome" : userName}}</span>
+      </a>
+      </div>
+          
+      <mat-card-header >
+        <button  class="btn" [matMenuTriggerFor]="menu">
+        <div class="circle" [ngStyle]="{'background-color':  circleColor }">      
+          <div *ngIf="showInitials" class="initials">
+              {{ initials }}
+          </div>
+          <div *ngIf="!showInitials" class="initialsH">
+            {{ 'W' }}
+        </div>
+      </div>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item *ngIf="showMenu" routerLink="/home">Dashboard</button>
+      <button mat-menu-item *ngIf="showMenu" routerLink="/profile">Profile</button>
+      <button mat-menu-item *ngIf="showMenu" (click)="logout()">Logout</button>
+      <button mat-menu-item *ngIf="!showMenu" routerLink="/signup">Register</button>
+      <button mat-menu-item *ngIf="!showMenu" routerLink="/">Login</button>
+    </mat-menu>
+      </mat-card-header>
+    </mat-toolbar> 
+  </div>

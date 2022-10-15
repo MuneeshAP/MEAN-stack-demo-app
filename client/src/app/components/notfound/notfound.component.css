@@ -1,0 +1,16 @@
+.error-template {padding: 40px 15px;text-align: center;}
+.error-actions {margin-top:15px;margin-bottom:15px;}
+.error-actions .btn { margin-right:10px; }
+
+
+.mat-flat-button {
+    margin: 10px;
+    max-width: 30%;
+    font-size: medium;
+    background-color: rgb(78, 71, 223);
+    color: white;
+  }
+  .mat-flat-button:hover{
+    background-color:rgb(240, 125, 232);
+    color: white;
+  }

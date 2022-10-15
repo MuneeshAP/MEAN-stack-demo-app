@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+  <div class="mat-elevation-z8 tabcont" >
+    <table mat-table [dataSource]="data" class="example-table-container"
+           matSort matSortActive="name" matSortDisableClear matSortDirection="asc" >
+
+      <!-- Cases Name Column -->
+      <ng-container matColumnDef="bankName">
+        <th mat-header-cell *matHeaderCellDef>Bank Name</th>
+        <td mat-cell *matCellDef="let row">{{row.bankName}}</td>
+      </ng-container>
+
+      <ng-container class ="tdcont" matColumnDef="cardNumber">
+        <th mat-header-cell *matHeaderCellDef>Card Number</th>
+        <td mat-cell *matCellDef="let row">{{row.cardNumber}}</td>
+      </ng-container>
+
+      <!-- Cases Age Column -->
+      <ng-container matColumnDef="cvv">
+        <th mat-header-cell *matHeaderCellDef>CVV</th>
+        <td mat-cell *matCellDef="let row">{{row.cvv}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="expMonth">
+        <th mat-header-cell *matHeaderCellDef>Exp. Month</th>
+        <td mat-cell *matCellDef="let row">{{row.expMonth}}</td>
+      </ng-container>
+
+      <!-- Cases Status Column -->
+      <ng-container matColumnDef="expYear">
+        <th mat-header-cell *matHeaderCellDef>Exp. Year</th>
+        <td mat-cell *matCellDef="let row">{{row.expYear}}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <a mat-flat-button [routerLink]="['/addcard']"><mat-icon>add</mat-icon> Add Cards</a>
+  </div>
+
+

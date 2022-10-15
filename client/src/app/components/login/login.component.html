@@ -1,0 +1,42 @@
+<!-- <section>  -->
+  <app-header></app-header>
+       <div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+          *ngIf="isLoadingResults">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+    <mat-card class="example-card"> 
+        <h3>Login</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email"
+                  [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!loginForm.get('email')!.valid && loginForm.get('email')!.touched">Please enter Email</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Password</mat-label>
+          <input matInput placeholder="Password" formControlName="password"
+                      [errorStateMatcher]="matcher" type="password">
+          <mat-error>
+            <span *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched">Please enter Password</span>
+          </mat-error>
+        </mat-form-field>
+        <div class="button-row">
+          <button type="submit" [disabled]="!loginForm.valid" mat-flat-button color="primary">
+            <mat-icon>save</mat-icon>
+        </button>
+        <div *ngIf="isLoadingResults === false &&  (errors !== null || errors !== '' )" class="forerror">
+           <span >{{errors}}</span>
+        </div>
+        <span>Don't have an Account? <a routerLink="/signup">Register</a></span>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+  
+<!-- </section> -->
+
+
